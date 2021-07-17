@@ -36,6 +36,10 @@ describe('🧪 Chars in Str tests 🧪', () => {
     })
 
     it('should return true', () => {
+      chai.isTrue(charsInString(['heowm'], 'helloworld'))
+    })
+
+    it('should return true', () => {
       chai.isTrue(charsInString([':', ',', '^'], ':helloworld', Position.Start))
     })
 
@@ -79,6 +83,10 @@ describe('🧪 Chars in Str tests 🧪', () => {
 
     it('should return true', () => {
       chai.isTrue(stringsInString(['abc', 'owom', 'wqp', 'world', 'hel'], 'helloworld', Position.Start))
+    })
+
+    it('should return true', () => {
+      chai.isTrue(stringsInString(['abc', 'owom', 'wqp', 'world', 'HEL'], 'helloworld', Position.Start, false))
     })
 
     it('should return false', () => {
