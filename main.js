@@ -79,7 +79,7 @@ function stringSearch(searchFor, characters, string, position = Position.Any, ca
  * @param {string} string the String which needs to be checked,
  * @param {Position} [position=Position.Any] controls where the matching should occur, at the **beggining** of the `String`, at the **end** or **anywhere** (default),
  * @param {boolean} [caseSensitive=true] controls whether the search is case-sensitive, defalts to true,
- * @returns {boolean} returns true upon first match or when the array of supplied characters to search for is empty; false if no matches are found or the string to be searched is empty.
+ * @returns {boolean} returns true upon first match, false if no matches are found.
  */
 function charsInString(characters, string, position = Position.Any, caseSensitive = true) {
   return stringSearch(SearchFor.Character, characters, string, position, caseSensitive)
@@ -92,7 +92,7 @@ function charsInString(characters, string, position = Position.Any, caseSensitiv
  * @param {string} string the String which needs to be checked,
  * @param {Position} [position=Position.Any] controls where the matching should occur, at the **beggining** of the `String`, at the **end** or **anywhere** (default),
  * @param {boolean} [caseSensitive=true] controls whether the search is case-sensitive, defalts to true,
- * @returns {boolean} returns true upon first match or when the array of supplied strings to search for is empty; false if no matches are found or the string to be searched is empty.
+ * @returns {boolean} returns true upon first match, false if no matches are found.
  */
 function stringsInString(strings, string, position = Position.Any, caseSensitive = true) {
   return stringSearch(SearchFor.Characters, strings, string, position, caseSensitive)

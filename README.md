@@ -65,7 +65,7 @@ const { charsInString, stringsInString, Position } = require('@igor.dvlpr/chars-
 
 console.log(charsInString([], '')) // prints false
 
-console.log(charsInString([], 'test')) // prints true
+console.log(charsInString([], 'test')) // prints false
 
 console.log(charsInString([':', ','], '')) // prints false
 

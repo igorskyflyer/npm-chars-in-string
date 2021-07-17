@@ -7,8 +7,8 @@ describe('🧪 Chars in Str tests 🧪', () => {
       chai.isFalse(charsInString([], ''))
     })
 
-    it('should return true', () => {
-      chai.isTrue(charsInString([], 'test'))
+    it('should return false', () => {
+      chai.isFalse(charsInString([], 'test'))
     })
 
     it('should return false', () => {
