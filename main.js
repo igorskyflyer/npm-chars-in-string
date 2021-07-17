@@ -63,15 +63,15 @@ function stringSearch(searchFor, characters, string, position = Position.Any, ca
     }
 
     if (position === Position.Start) {
-      if (string.indexOf(needle) === 0) {
+      if (haystack.indexOf(needle) === 0) {
         return true
       }
     } else if (position === Position.End) {
-      if (string.indexOf(needle) === stringCount - needle.length) {
+      if (haystack.indexOf(needle) === stringCount - needle.length) {
         return true
       }
     } else {
-      if (string.indexOf(needle) > -1) {
+      if (haystack.indexOf(needle) > -1) {
         return true
       }
     }
