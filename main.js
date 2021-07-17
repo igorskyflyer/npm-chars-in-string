@@ -37,14 +37,6 @@ function stringSearch(searchFor, characters, string, position = Position.Any, ca
   const charactersCount = characters.length
   const stringCount = string.length
 
-  if (charactersCount === 0) {
-    return true
-  }
-
-  if (stringCount === 0) {
-    return false
-  }
-
   for (let i = 0; i < charactersCount; i++) {
     let haystack = string
     let needle = characters[i]
