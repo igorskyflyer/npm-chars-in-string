@@ -1,6 +1,6 @@
 {
 	"name": "@igor.dvlpr/chars-in-string",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "🪐 Provides ways of testing whether an array of chars is present inside a given String. ☄",
 	"main": "main.js",
 	"files": [
@@ -9,7 +9,7 @@
 	],
 	"types": "./dist/main.d.ts",
 	"scripts": {
-		"test": "mocha --slow 0",
+		"test": "mocha",
 		"pub": "npm test && tsc && npm publish --access public"
 	},
 	"repository": {
