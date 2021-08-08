@@ -3,6 +3,11 @@
 🪐 Provides ways of testing whether an array of chars is present inside a given String. ☄
 
 <br>
+<br>
+
+✨ Since `v.2.0.0` `chars-in-string` is a hybrid module that supports both CommonJS (legacy) and ES modules, thanks to [Modern Module](https://github.com/igorskyflyer/npm-modern-module).
+
+<br>
 
 ### API
 
