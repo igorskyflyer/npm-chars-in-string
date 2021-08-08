@@ -1,5 +1,5 @@
-const chai = require('chai').assert
-const { charsInString, Position, stringsInString } = require('../main')
+import { assert as chai } from 'chai'
+import { charsInString, Position, stringsInString } from '../src/main.js'
 
 describe('🧪 Chars in Str tests 🧪', () => {
   describe('charsInString()', () => {
