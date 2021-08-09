@@ -11,7 +11,7 @@ const SearchFor = {
  * @public
  * @enum {number}
  */
-export const Position = {
+const Position = {
   Any: 0,
   Start: 1,
   End: 2,
@@ -79,7 +79,7 @@ function stringSearch(searchFor, characters, string, position = Position.Any, ca
  * @param {boolean} [caseSensitive=true] controls whether the search is case-sensitive, defalts to true,
  * @returns {boolean} returns true upon first match, false if no matches are found.
  */
-export function charsInString(characters, string, position = Position.Any, caseSensitive = true) {
+function charsInString(characters, string, position = Position.Any, caseSensitive = true) {
   return stringSearch(SearchFor.Character, characters, string, position, caseSensitive)
 }
 
@@ -92,6 +92,12 @@ export function charsInString(characters, string, position = Position.Any, caseS
  * @param {boolean} [caseSensitive=true] controls whether the search is case-sensitive, defalts to true,
  * @returns {boolean} returns true upon first match, false if no matches are found.
  */
-export function stringsInString(strings, string, position = Position.Any, caseSensitive = true) {
+function stringsInString(strings, string, position = Position.Any, caseSensitive = true) {
   return stringSearch(SearchFor.Characters, strings, string, position, caseSensitive)
+}
+
+module.exports = {
+  Position,
+  charsInString,
+  stringsInString,
 }
