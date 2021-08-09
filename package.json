@@ -21,7 +21,7 @@
 	],
 	"scripts": {
 		"test": "mocha",
-		"pub": "npm run build && npm test && npm publish --access public"
+		"pub": "npm test && tsc && npm publish --access public"
 	},
 	"repository": {
 		"type": "git",
