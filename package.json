@@ -1,6 +1,6 @@
 {
 	"name": "@igor.dvlpr/chars-in-string",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "🪐 Provides ways of testing whether an array of chars is present inside a given String. ☄",
 	"engines": {
 		"node": ">=12.17"
