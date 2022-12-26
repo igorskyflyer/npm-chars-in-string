@@ -44,7 +44,7 @@
 	"homepage": "https://github.com/igorskyflyer/npm-chars-in-string#readme",
 	"devDependencies": {
 		"@types/chai": "^4.3.4",
-		"@types/mocha": "^9.1.1",
+		"@types/mocha": "^10.0.0",
 		"@types/node": "^12.17.0",
 		"chai": "^4.3.7",
 		"mocha": "^10.1.0",
