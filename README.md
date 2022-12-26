@@ -5,6 +5,14 @@
 <br>
 <br>
 
+<div align="center">
+<h3>💖 Support further development</h3>
+<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="164"></a>
+</div>
+
+<br>
+<br>
+
 ✨ Since `v.2.0.0` `chars-in-string` is a hybrid module that supports both CommonJS (legacy) and ES modules, thanks to [Modern Module](https://github.com/igorskyflyer/npm-modern-module).
 
 <br>
