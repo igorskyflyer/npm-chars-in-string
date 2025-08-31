@@ -4,17 +4,17 @@
  */
 const SearchFor = {
   Character: 0,
-  Characters: 1,
+  Characters: 1
 }
 
 /**
  * @public
  * @enum {number}
  */
-const Position = {
+export const Position = {
   Any: 0,
   Start: 1,
-  End: 2,
+  End: 2
 }
 
 /**
@@ -27,43 +27,49 @@ const Position = {
  * @param {boolean} [caseSensitive=true]
  * @returns {boolean}
  */
-function stringSearch(searchFor, characters, string, position = Position.Any, caseSensitive = true) {
-  if (!characters || !(characters instanceof Array) || !string || typeof string !== 'string') {
+function stringSearch(
+  searchFor,
+  characters,
+  string,
+  position = Position.Any,
+  caseSensitive = true
+) {
+  if (!Array.isArray(characters) || typeof string !== 'string') {
     return false
   }
 
-  const charactersCount = characters.length
-  const stringCount = string.length
+  const haystackBase = caseSensitive ? string : string.toLowerCase()
 
-  for (let i = 0; i < charactersCount; i++) {
-    let haystack = string
-    let needle = characters[i]
-
+  for (let needle of characters) {
     if (searchFor === SearchFor.Character) {
-      if (needle.length > 0) {
-        needle = needle.charAt(0)
-      } else {
+      if (!needle) {
         continue
       }
+
+      needle = needle.charAt(0)
     }
 
-    if (!caseSensitive) {
-      needle = needle.toLowerCase()
-      haystack = haystack.toLowerCase()
+    const haystack = haystackBase
+    const match = caseSensitive ? needle : needle.toLowerCase()
+    let found = false
+
+    switch (position) {
+      case Position.Start: {
+        found = haystack.startsWith(match)
+        break
+      }
+      case Position.End: {
+        found = haystack.endsWith(match)
+        break
+      }
+      case Position.Any: {
+        found = haystack.includes(match)
+        break
+      }
     }
 
-    if (position === Position.Start) {
-      if (haystack.indexOf(needle) === 0) {
-        return true
-      }
-    } else if (position === Position.End) {
-      if (haystack.indexOf(needle) === stringCount - needle.length) {
-        return true
-      }
-    } else {
-      if (haystack.indexOf(needle) > -1) {
-        return true
-      }
+    if (found) {
+      return true
     }
   }
 
@@ -75,12 +81,23 @@ function stringSearch(searchFor, characters, string, position = Position.Any, ca
  * @public
  * @param {string[]} characters the characters to search for, expects a single character per entry, if multiple are found it will take the first one,
  * @param {string} string the String which needs to be checked,
- * @param {Position} [position=Position.Any] controls where the matching should occur, at the **beggining** of the `String`, at the **end** or **anywhere** (default),
- * @param {boolean} [caseSensitive=true] controls whether the search is case-sensitive, defalts to true,
+ * @param {Position} [position=Position.Any] controls where the matching should occur, at the **beginning** of the `String`, at the **end** or **anywhere** (default),
+ * @param {boolean} [caseSensitive=true] controls whether the search is case-sensitive, defaults to true,
  * @returns {boolean} returns true upon first match, false if no matches are found.
  */
-function charsInString(characters, string, position = Position.Any, caseSensitive = true) {
-  return stringSearch(SearchFor.Character, characters, string, position, caseSensitive)
+export function charsInString(
+  characters,
+  string,
+  position = Position.Any,
+  caseSensitive = true
+) {
+  return stringSearch(
+    SearchFor.Character,
+    characters,
+    string,
+    position,
+    caseSensitive
+  )
 }
 
 /**
@@ -88,16 +105,21 @@ function charsInString(characters, string, position = Position.Any, caseSensitiv
  * @public
  * @param {string[]} strings the strings to search for,
  * @param {string} string the String which needs to be checked,
- * @param {Position} [position=Position.Any] controls where the matching should occur, at the **beggining** of the `String`, at the **end** or **anywhere** (default),
- * @param {boolean} [caseSensitive=true] controls whether the search is case-sensitive, defalts to true,
+ * @param {Position} [position=Position.Any] controls where the matching should occur, at the **beginning** of the `String`, at the **end** or **anywhere** (default),
+ * @param {boolean} [caseSensitive=true] controls whether the search is case-sensitive, defaults to true,
  * @returns {boolean} returns true upon first match, false if no matches are found.
  */
-function stringsInString(strings, string, position = Position.Any, caseSensitive = true) {
-  return stringSearch(SearchFor.Characters, strings, string, position, caseSensitive)
-}
-
-module.exports = {
-  Position,
-  charsInString,
-  stringsInString,
+export function stringsInString(
+  strings,
+  string,
+  position = Position.Any,
+  caseSensitive = true
+) {
+  return stringSearch(
+    SearchFor.Characters,
+    strings,
+    string,
+    position,
+    caseSensitive
+  )
 }
