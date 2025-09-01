@@ -4,7 +4,7 @@
 
 <br>
 
-## v3.0.0 (*31-Aug-2025*)
+## v3.0.0 (*02-Sep-2025*)
 
 - **✅ fix**: rename API parameters to avoid ambiguity
 - **✅ fix**: reduce matching complexity
